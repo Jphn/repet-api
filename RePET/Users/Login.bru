@@ -1,0 +1,23 @@
+meta {
+  name: Login
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{url}}/users/login
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "email": "johndoe@email.com",
+    "password": "password"
+  }
+}
+
+vars:post-response {
+  access: res.body?.access
+  refresh: res.body?.refresh
+}

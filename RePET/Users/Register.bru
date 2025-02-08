@@ -1,0 +1,23 @@
+meta {
+  name: Register
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{url}}/users
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "display_name": "John Doe",
+    "username": "johndoe",
+    "email": "johndoe@email.com",
+    "password": "password",
+    "phone": "+5588993464951",
+    "birthdate": "2003-04-17",
+    "registration": "20222095020198"
+  }
+}

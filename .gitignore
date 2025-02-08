@@ -1,0 +1,30 @@
+# Packages
+composer.phar
+vendor
+node_modules
+
+# Environment
+.env
+.env.backup
+.env.production
+
+# Build
+build
+dist
+compiled
+
+# System/Editor
+.idea
+
+# Leaf
+.hana
+.alchemy
+hot
+storage/framework
+storage/logs
+storage/database
+storage/cache
+
+# Logs
+npm-debug.log
+yarn-error.log

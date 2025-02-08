@@ -1,0 +1,15 @@
+meta {
+  name: Token test
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{url}}/users/token
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{access}}
+}

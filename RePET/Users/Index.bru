@@ -1,0 +1,15 @@
+meta {
+  name: Index
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{url}}/users
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{access}}
+}
