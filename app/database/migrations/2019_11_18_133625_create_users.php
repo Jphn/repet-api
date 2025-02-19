@@ -1,8 +1,8 @@
 <?php
 
-use Leaf\Schema;
-use Leaf\Database;
 use Illuminate\Database\Schema\Blueprint;
+use Leaf\Database;
+use Leaf\Schema;
 
 class CreateUsers extends Database
 {
@@ -29,11 +29,11 @@ class CreateUsers extends Database
                 $table->increments('id');
 
                 $table->string('display_name');
-                $table->string('username')->unique();
+                $table->string('username', 15)->unique();
                 $table->string('email')->unique();
-                $table->string('phone');
+                $table->string('phone', 20);
                 $table->date('birthdate');
-                $table->string('registration')->unique()->nullable();
+                $table->string('registration', 14)->unique()->nullable();
                 $table->string('password');
 
                 $table->boolean('email_verified')->default(false);
