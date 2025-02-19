@@ -109,7 +109,7 @@ return [
     | exactly as it is in the database.
     |
     */
-    'hidden' => ['field.id', 'field.password'],
+    'hidden' => ['id', 'password', 'email_verification_token', 'email_verification_expires'],
 
     /*
     |--------------------------------------------------------------------------
