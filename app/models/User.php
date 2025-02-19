@@ -24,6 +24,8 @@ class User extends Model
      */
     protected $hidden = [
         'password',
+        'email_verification_token',
+        'email_verification_expires'
     ];
 
     /**
@@ -39,5 +41,14 @@ class User extends Model
     protected $casts = [
         // 'email_verification_expires' => 'datetime',
         'birthdate' => 'date',
+    ];
+
+    /**
+     * The model's default values for attributes.
+     *
+     * @var array
+     */
+    protected $attributes = [
+        'points' => 0,
     ];
 }
