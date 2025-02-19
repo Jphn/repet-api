@@ -28,3 +28,4 @@ storage/cache
 # Logs
 npm-debug.log
 yarn-error.log
+.vscode
