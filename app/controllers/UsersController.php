@@ -13,30 +13,46 @@ class UsersController extends Controller
 
     public function store()
     {
-        $success = auth()->register(request()->body());
+        if (!$data = request()->validate([
+            'display_name' => 'string|min:3',
+            'username' => 'username',
+            'email' => 'email',
+            'password' => 'string|min:8',
+            'phone' => 'phone|min:14|max:14',
+            'birthdate' => 'date',
+            'registration' => 'number|min:14|max:14',
+        ])) {
+            return response()->json(request()->errors(), 406);
+        }
 
-        if (!$success)
+        $success = auth()->register($data);
+
+        if (!$success) {
             return response()->json(auth()->errors(), 406);
+        }
 
         return response()->json([
-            'message' => 'User successfully created!'
+            'message' => 'User successfully created!',
         ], 201);
     }
 
     public function login()
     {
-        $success = auth()->login(request()->body());
+        if (!$data = request()->validate([
+            'email' => 'email',
+            'password' => 'string|min:8',
+        ])) {
+            return response()->json(request()->errors(), 406);
+        }
 
-        if (!$success)
+        $success = auth()->login($data);
+
+        if (!$success || auth()->user()->deleted_at) {
             return response()->json([
-                'error' => 'Email or password is incorrect! Please try again.'
+                'error' => 'Email or password is incorrect! Please try again.',
             ], 401);
+        }
 
         return response()->json(auth()->user()->tokens(), 202);
-    }
-
-    public function token()
-    {
-        dd(auth()->user());
     }
 }
