@@ -4,9 +4,6 @@ app()->get('/', function () {
     response()->json(['message' => 'Bem vindo ao repet']);
 });
 
-
-
-
 app()->group('/users', function () {
     app()->apiResource('/', 'UsersController');
     app()->post('/login', 'UsersController@login');
