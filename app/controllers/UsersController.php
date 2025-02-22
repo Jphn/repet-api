@@ -6,9 +6,12 @@ class UsersController extends Controller
 {
     public function index()
     {
-        response()->json([
-            'message' => 'UsersController@index output'
-        ]);
+        return response()->json(
+            (!auth()->user()
+                ? auth()->errors()
+                : auth()->user()->get()),
+            !auth()->user() ? 406 : 200
+        );
     }
 
     public function store()
