@@ -1,27 +1,30 @@
 {
-    "name": "leafs/mvc",
-    "version": "3.9.1",
-    "description": "A lightweight PHP MVC framework powered by Leaf",
-    "type": "library",
+    "name": "repet/api",
+    "version": "0.1.0",
+    "description": "A recycling project inside IFCE.",
     "keywords": [
-        "framework",
         "leaf",
-        "leafPHP",
-        "mvc",
-        "leaf mvc"
+        "repet",
+        "recycling"
     ],
     "license": "MIT",
     "authors": [
         {
-            "name": "Michael Darko",
-            "email": "mickdd22@gmail.com",
-            "homepage": "https://mychi.netlify.app",
+            "email": "joaopedroholandaneves@gmail.com",
+            "homepage": "https://github.com/Jphn",
+            "name": "João Pedro Holanda Neves",
             "role": "Maintainer"
         },
         {
-            "name": "Abdulbasit Rubeya",
-            "email": "abdulbasitsultan4@gmail.com",
-            "homepage": "https://github.com/ibnsultan",
+            "email": "natanpedrosateixeira10@gmail.com",
+            "homepage": "https://github.com/natanpt",
+            "name": "Natan Pedrosa Teixeira",
+            "role": "Maintainer"
+        },
+        {
+            "email": "breno013cardoso@gmail.com",
+            "homepage": "https://github.com/brenocd013",
+            "name": "José Breno Cardoso Duarte",
             "role": "Maintainer"
         }
     ],
