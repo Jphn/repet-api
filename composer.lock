@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "10bd23a24ea8122c288cf7c5be119f64",
+    "content-hash": "8e68f5f23be7f4611602332b1bb3553c",
     "packages": [
         {
             "name": "carbonphp/carbon-doctrine-types",
@@ -1758,16 +1758,16 @@
         },
         {
             "name": "leafs/db",
-            "version": "v2.3",
+            "version": "2.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/leafsphp/db.git",
-                "reference": "bd7afbc182fa6b69080db3bd49d340ec4aa6f8fe"
+                "reference": "40ece75be5525983f690a4b629232112c6f6250f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/leafsphp/db/zipball/bd7afbc182fa6b69080db3bd49d340ec4aa6f8fe",
-                "reference": "bd7afbc182fa6b69080db3bd49d340ec4aa6f8fe",
+                "url": "https://api.github.com/repos/leafsphp/db/zipball/40ece75be5525983f690a4b629232112c6f6250f",
+                "reference": "40ece75be5525983f690a4b629232112c6f6250f",
                 "shasum": ""
             },
             "require": {
@@ -1810,7 +1810,7 @@
             ],
             "support": {
                 "issues": "https://github.com/leafsphp/db/issues",
-                "source": "https://github.com/leafsphp/db/tree/v2.3"
+                "source": "https://github.com/leafsphp/db/tree/2.4.1"
             },
             "funding": [
                 {
@@ -1822,7 +1822,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2025-01-09T16:44:48+00:00"
+            "time": "2025-02-08T21:32:41+00:00"
         },
         {
             "name": "leafs/exception",
@@ -2102,16 +2102,16 @@
         },
         {
             "name": "leafs/leaf",
-            "version": "v3.11.1",
+            "version": "v3.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/leafsphp/leaf.git",
-                "reference": "6b8d771c3a4f8ef64121f39f049b2779db4aaf1a"
+                "reference": "d09dde25e11cd23691515f609a178c5cad7995de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/leafsphp/leaf/zipball/6b8d771c3a4f8ef64121f39f049b2779db4aaf1a",
-                "reference": "6b8d771c3a4f8ef64121f39f049b2779db4aaf1a",
+                "url": "https://api.github.com/repos/leafsphp/leaf/zipball/d09dde25e11cd23691515f609a178c5cad7995de",
+                "reference": "d09dde25e11cd23691515f609a178c5cad7995de",
                 "shasum": ""
             },
             "require": {
@@ -2158,7 +2158,7 @@
             ],
             "support": {
                 "issues": "https://github.com/leafsphp/leaf/issues",
-                "source": "https://github.com/leafsphp/leaf/tree/v3.11.1"
+                "source": "https://github.com/leafsphp/leaf/tree/v3.12"
             },
             "funding": [
                 {
@@ -2170,7 +2170,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2025-02-07T21:49:00+00:00"
+            "time": "2025-02-10T01:17:43+00:00"
         },
         {
             "name": "leafs/logger",
@@ -2496,16 +2496,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.72.6",
+            "version": "2.73.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/CarbonPHP/carbon.git",
-                "reference": "1e9d50601e7035a4c61441a208cb5bed73e108c5"
+                "reference": "9228ce90e1035ff2f0db84b40ec2e023ed802075"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CarbonPHP/carbon/zipball/1e9d50601e7035a4c61441a208cb5bed73e108c5",
-                "reference": "1e9d50601e7035a4c61441a208cb5bed73e108c5",
+                "url": "https://api.github.com/repos/CarbonPHP/carbon/zipball/9228ce90e1035ff2f0db84b40ec2e023ed802075",
+                "reference": "9228ce90e1035ff2f0db84b40ec2e023ed802075",
                 "shasum": ""
             },
             "require": {
@@ -2599,7 +2599,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-12-27T09:28:11+00:00"
+            "time": "2025-01-08T20:10:23+00:00"
         },
         {
             "name": "nikic/php-parser",
