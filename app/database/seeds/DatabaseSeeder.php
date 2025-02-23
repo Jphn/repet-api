@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
     {
         return [
             UsersSeeder::class,
+            PrintModelsSeeder::class
         ];
     }
 }
