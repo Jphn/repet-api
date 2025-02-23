@@ -1826,16 +1826,16 @@
         },
         {
             "name": "leafs/exception",
-            "version": "v3.6.1",
+            "version": "v3.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/leafsphp/exceptions.git",
-                "reference": "47e7b5575dbda0a5122f9435e695e347cded75dd"
+                "reference": "1a8cf4b1733668525aa2b7da8b0698a4408d4175"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/leafsphp/exceptions/zipball/47e7b5575dbda0a5122f9435e695e347cded75dd",
-                "reference": "47e7b5575dbda0a5122f9435e695e347cded75dd",
+                "url": "https://api.github.com/repos/leafsphp/exceptions/zipball/1a8cf4b1733668525aa2b7da8b0698a4408d4175",
+                "reference": "1a8cf4b1733668525aa2b7da8b0698a4408d4175",
                 "shasum": ""
             },
             "require": {
@@ -1885,7 +1885,7 @@
                 "whoops"
             ],
             "support": {
-                "source": "https://github.com/leafsphp/exceptions/tree/v3.6.1"
+                "source": "https://github.com/leafsphp/exceptions/tree/v3.6.3"
             },
             "funding": [
                 {
@@ -1893,7 +1893,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-01-25T13:54:37+00:00"
+            "time": "2025-02-22T07:21:01+00:00"
         },
         {
             "name": "leafs/form",
