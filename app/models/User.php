@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
 class User extends Model
 {
     /**
@@ -51,4 +53,9 @@ class User extends Model
     protected $attributes = [
         'points' => 0,
     ];
+
+    public function printModels(): HasMany
+    {
+        return $this->hasMany(PrintModel::class);
+    }
 }
