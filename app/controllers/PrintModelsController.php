@@ -44,7 +44,17 @@ class PrintModelsController extends Controller
      */
     public function show($id)
     {
-        //
+        if (!auth()->user()) {
+            return response()->json(auth()->errors(), 401);
+        }
+
+        $printModel = PrintModel::find($id);
+
+        if (!$printModel) {
+            return response()->json(["error" => "Model not found!"], 404);
+        }
+
+        return response()->json($printModel->get(), 202);
     }
 
     /**
@@ -52,16 +62,30 @@ class PrintModelsController extends Controller
      */
     public function update($id)
     {
-        /*
-        |--------------------------------------------------------------------------
-        |
-        | This is an example which edits a particular row. 
-        | You can un-comment it to use this example
-        |
-        */
-        // $row = PrintModel::find($id);
-        // $row->column = request()->get('column');
-        // $row->save();
+        if (!auth()->user()) {
+            return response()->json(auth()->errors(), 401);
+        }
+
+        $data = request()->validate([
+            'name' => 'string|min:3',
+            'description' => 'string|text',
+            'credits' => 'string|text',
+            'private' => 'boolean',
+        ]);
+
+        $printModel = PrintModel::find($id);
+
+        if (!$printModel) {
+            return response()->json(["error" => "Model not found!"], 404);
+        }
+
+        if ($printModel->user_id !== auth()->user()->id) {
+            return response()->json(["error" => "You don't have permission to edit this model!"], 403);
+        }
+
+        $printModel->update($data);
+
+        return response()->json($printModel, 202);
     }
 
     /**
@@ -69,14 +93,23 @@ class PrintModelsController extends Controller
      */
     public function destroy($id)
     {
-        /*
-        |--------------------------------------------------------------------------
-        |
-        | This is an example which deletes a particular row. 
-        | You can un-comment it to use this example
-        |
-        */
-        // $row = PrintModel::find($id);
-        // $row->delete();
+        if (!auth()->user()) {
+            return response()->json(auth()->errors(), 401);
+        }
+
+        $printModel = PrintModel::find($id);
+
+        if (!$printModel) {
+            return response()->json(["error" => "Model not found!"], 404);
+        }
+
+        if (PrintModel::find($id)->user->id !== auth()->user()->id) {
+            return response()->json(["error" => "You don't have permission to delete this model!"], 403);
+        }
+
+        $printModel->delete();
+
+        return response()->json(["message" => "Model successfully deleted!"], 202);
+
     }
 }
