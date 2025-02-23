@@ -23,11 +23,12 @@ class UserFactory extends Factory
             // 'remember_token' => $this->str::random(10),
 
             'display_name' => $this->faker->firstName,
-            'username' => $this->faker->userName,
-            'email' => $this->faker->email,
+            'username' => $this->faker->unique()->userName,
+            'email' => $this->faker->unique()->email(),
             'phone' => $this->faker->phoneNumber,
             'birthdate' => $this->faker->date,
-            'registration' => $this->faker->creditCardNumber,
+            'registration' => 2022209502 . $this->faker->unique()->numberBetween(1000, 9999),
+            'points' => $this->faker->randomNumber(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
         ];
     }
