@@ -29,7 +29,7 @@ class CreateUsers extends Database
                 $table->increments('id');
 
                 $table->string('display_name');
-                $table->string('username', 15)->unique();
+                $table->string('username')->unique();
                 $table->string('email')->unique();
                 $table->string('phone', 20);
                 $table->date('birthdate');
@@ -41,7 +41,7 @@ class CreateUsers extends Database
                 $table->timestamp('email_verification_expires')->nullable();
 
                 $table->timestamps();
-                $table->timestamp('deleted_at')->nullable();
+                $table->softDeletes();
                 // $table->rememberToken();
             });
         endif;
