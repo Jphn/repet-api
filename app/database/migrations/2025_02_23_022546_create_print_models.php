@@ -15,7 +15,12 @@ class CreatePrintModels extends Database
         if (!static::$capsule::schema()->hasTable('print_models')) :
             static::$capsule::schema()->create('print_models', function (Blueprint $table) {
                 $table->increments('id');
-                $table->foreignId('user_id');
+                $table->unsignedInteger('user_id');
+                $table->foreign('user_id')
+                    ->references('id')
+                    ->on('users')
+                    ->cascadeOnDelete()
+                    ->cascadeOnUpdate();
 
                 $table->string('name', 50);
                 $table->text('description');
