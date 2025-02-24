@@ -64,6 +64,10 @@ class CreateUsers extends Database
      */
     public function down()
     {
+        static::$capsule::schema()->disableForeignKeyConstraints();
+
         static::$capsule::schema()->dropIfExists('users');
+
+        static::$capsule::schema()->enableForeignKeyConstraints();
     }
 }
