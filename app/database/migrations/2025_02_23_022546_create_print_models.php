@@ -24,7 +24,7 @@ class CreatePrintModels extends Database
 
                 $table->string('name', 50);
                 $table->text('description');
-                $table->unsignedInteger('cost');
+                $table->unsignedInteger('cost')->nullable();
                 $table->text('credits');
                 $table->boolean('private')->default(false);
                 $table->boolean('approved')->nullable();
