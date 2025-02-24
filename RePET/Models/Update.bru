@@ -1,0 +1,24 @@
+meta {
+  name: Update
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{url}}/models/{id}
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{access}}
+}
+
+body:json {
+  {
+    "name": "New name",
+    "description": "New description",
+    "credits": "New credits",
+    "private": true
+  }
+}

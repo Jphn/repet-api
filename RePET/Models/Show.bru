@@ -1,0 +1,15 @@
+meta {
+  name: Show
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{url}}/models/60
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{access}}
+}

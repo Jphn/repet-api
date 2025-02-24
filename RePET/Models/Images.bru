@@ -1,0 +1,19 @@
+meta {
+  name: Images
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{url}}/models/61/images
+  body: multipartForm
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{access}}
+}
+
+body:multipart-form {
+  image: @file(/home/jphn/Downloads/Ceiling Xenomorph Updated - 6932746/images/20250131_183510.jpg)
+}
