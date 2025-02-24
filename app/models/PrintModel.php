@@ -3,10 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class PrintModel extends Model
 {
+    public function generateFolderName()
+    {
+        $this->folder = time() . '_' . $this->name . '_' . bin2hex(random_bytes(8));
+    }
 
     protected $fillable = [
         'name',
@@ -18,8 +21,19 @@ class PrintModel extends Model
         'folder',
     ];
 
+    protected $attributes = [
+        'private' => false
+    ];
+
     protected $hidden = [
-        'folder'
+        'folder',
+        'user_id',
+        'user'
+    ];
+
+    protected $casts = [
+        'approved' => 'boolean',
+        'private' => 'boolean'
     ];
 
     public function user(): BelongsTo
