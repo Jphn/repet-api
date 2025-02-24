@@ -11,37 +11,49 @@ class PrintModelsController extends Controller
      */
     public function index()
     {
-        /*
-        |--------------------------------------------------------------------------
-        |
-        | This is an example which retrieves all the data (rows)
-        | from our model. You can un-comment it to use this
-        | example
-        |
-        */
-        response()->json(PrintModel::all()->where('private', '=', false)->where('approved', '=', true));
+        response()->json(
+            PrintModel::all()
+                ->where('private', '=', false)
+                ->where('approved', '=', true)
+                ->values()
+        );
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store()
     {
-        /*
-        |--------------------------------------------------------------------------
-        |
-        | This is an example which deletes a particular row. 
-        | You can un-comment it to use this example
-        |
-        */
-        // $row = new PrintModel;
-        // $row->column = request()->get('column');
-        // $row->delete();
+        if (!$data = request()->validate([
+            'name' => 'string|min:3',
+            'description' => 'string',
+            'credits' => 'string',
+            'private' => 'optional|boolean'
+        ])) return response()->json(request()->errors(), 401);
+
+        $printModel = new PrintModel($data);
+        $printModel->generateFolderName();
+        $printModel->user_id = auth()->user()->id;
+
+        if (!file_exists(AppPaths('printModels')))
+            mkdir(AppPaths('printModels'));
+
+        if (!mkdir(AppPaths('printModels') . "/$printModel->folder"))
+            return response()->json(['error' => 'For some reason, folder already exists.'], 501);
+
+
+        if (!$printModel->save())
+            return response()->json(['message' => 'An error occurred while trying to save the model.'], 501);
+
+        return response()->json($printModel->toArray(), 201);
     }
 
-    /**
-     * Display the specified resource.
-     */
+    public function uploadImages($id)
+    {
+        dd(
+            request()->files(),
+        );
+    }
+
+    // public function uploadFiles($id) {}
+
     public function show($id)
     {
         if (!auth()->user()) {
