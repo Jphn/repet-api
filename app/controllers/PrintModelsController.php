@@ -6,9 +6,6 @@ use App\Models\PrintModel;
 
 class PrintModelsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         response()->json(
@@ -56,34 +53,23 @@ class PrintModelsController extends Controller
 
     public function show($id)
     {
-        if (!auth()->user()) {
-            return response()->json(auth()->errors(), 401);
-        }
-
         $printModel = PrintModel::find($id);
 
-        if (!$printModel) {
+        if (!$printModel || ($printModel->private && $printModel->user->id !== auth()->user()->id)) {
             return response()->json(["error" => "Model not found!"], 404);
         }
 
-        return response()->json($printModel->get(), 202);
+        return response()->json($printModel, 200);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update($id)
     {
-        if (!auth()->user()) {
-            return response()->json(auth()->errors(), 401);
-        }
-
-        $data = request()->validate([
+        if (!$data = request()->validate([
             'name' => 'string|min:3',
             'description' => 'string|text',
             'credits' => 'string|text',
-            'private' => 'boolean',
-        ]);
+            'private' => 'optional|boolean'
+        ])) return response()->json(request()->errors(), 401);
 
         $printModel = PrintModel::find($id);
 
@@ -100,15 +86,8 @@ class PrintModelsController extends Controller
         return response()->json($printModel, 202);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy($id)
     {
-        if (!auth()->user()) {
-            return response()->json(auth()->errors(), 401);
-        }
-
         $printModel = PrintModel::find($id);
 
         if (!$printModel) {
@@ -122,6 +101,5 @@ class PrintModelsController extends Controller
         $printModel->delete();
 
         return response()->json(["message" => "Model successfully deleted!"], 202);
-
     }
 }
