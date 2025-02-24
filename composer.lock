@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8e68f5f23be7f4611602332b1bb3553c",
+    "content-hash": "5811b50e9aac63be2bbcbef11d39f93f",
     "packages": [
         {
             "name": "carbonphp/carbon-doctrine-types",
@@ -1693,16 +1693,16 @@
         },
         {
             "name": "leafs/date",
-            "version": "v2.1",
+            "version": "v2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/leafsphp/date.git",
-                "reference": "9f12bc13cec85ee3f015667d9f9e7913e94dd4ad"
+                "reference": "5fbe69cb7f6aca51e4b9a6e34056bac1d9b58f0d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/leafsphp/date/zipball/9f12bc13cec85ee3f015667d9f9e7913e94dd4ad",
-                "reference": "9f12bc13cec85ee3f015667d9f9e7913e94dd4ad",
+                "url": "https://api.github.com/repos/leafsphp/date/zipball/5fbe69cb7f6aca51e4b9a6e34056bac1d9b58f0d",
+                "reference": "5fbe69cb7f6aca51e4b9a6e34056bac1d9b58f0d",
                 "shasum": ""
             },
             "require-dev": {
@@ -1742,7 +1742,7 @@
             ],
             "support": {
                 "issues": "https://github.com/leafsphp/date/issues",
-                "source": "https://github.com/leafsphp/date/tree/v2.1"
+                "source": "https://github.com/leafsphp/date/tree/v2.2"
             },
             "funding": [
                 {
@@ -1754,7 +1754,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2024-08-17T05:18:39+00:00"
+            "time": "2025-02-24T17:40:14+00:00"
         },
         {
             "name": "leafs/db",
