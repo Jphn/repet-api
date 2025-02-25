@@ -23,7 +23,7 @@ class UsersController extends Controller
             'password' => 'string|min:8',
             'phone' => 'phone|min:14|max:14',
             'birthdate' => 'date',
-            'registration' => 'number|min:14|max:14',
+            'registration' => 'optional|number|min:14|max:14',
         ])) {
             return response()->json(request()->errors(), 406);
         }
