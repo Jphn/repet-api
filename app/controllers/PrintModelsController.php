@@ -100,6 +100,6 @@ class PrintModelsController extends Controller
 
         $printModel->delete();
 
-        return response()->json(["message" => "Model successfully deleted!"], 202);
+        return response()->json([], 204);
     }
 }
