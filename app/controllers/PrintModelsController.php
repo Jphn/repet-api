@@ -66,8 +66,8 @@ class PrintModelsController extends Controller
     {
         if (!$data = request()->validate([
             'name' => 'string|min:3',
-            'description' => 'string|text',
-            'credits' => 'string|text',
+            'description' => 'string',
+            'credits' => 'string',
             'private' => 'optional|boolean'
         ])) return response()->json(request()->errors(), 401);
 
