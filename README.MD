@@ -1,20 +1,27 @@
-# README
+# REPET
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Este projeto web tem como objetivo incentivar a reciclagem, aumentando a quantidade de material reciclado por meio de um sistema de recompensas. Os usuários podem entregar materiais recicláveis em pontos de coleta e, em troca, acumular pontos na plataforma. Esses pontos podem ser utilizados para resgatar impressões 3D, tornando o processo de reciclagem mais atrativo e acessível. A iniciativa busca promover a sustentabilidade e a conscientização ambiental, utilizando a tecnologia como ferramenta para incentivar a participação ativa na reciclagem.
 
-Things you may want to cover:
+## Como usar
 
-## App Info
+## Tecnologias
 
-## Installation
+<div style="display: flex;">
 
-## System dependencies
+- [PHP](https://www.php.net/manual/en/)
 
-## Configuration
+- [Leaf](https://leafphp.dev/docs/)
 
-## Database creation
+- [Github](https://docs.github.com/)
 
-## Database initialization
+- [Git](https://git-scm.com/doc) 
 
-## Deployment instructions
+</div>
+
+## Github
+
+<div align="center">
+
+Projeto feito por alunos do 5º semestre do curso de Ciência da Computação - IFCE - Campus Iguatu: <br>[João Pedro](https://github.com/Jphn), [Natan](https://github.com/natanpedrosateixeira), [Lucas](https://github.com/Lusca-F), [Bira](https://github.com/Ubiracyauri), [Breno](https://github.com/brenocd013), [Luciano](https://github.com/JLucianoNeto) e [Sávio](https://github.com/).
+
+</div>
